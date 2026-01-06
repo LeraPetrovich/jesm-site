@@ -1,0 +1,183 @@
+@use "variables";
+@use "mixins";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,500&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: variables.$font-base;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto Flex", Helvetica, sans-serif;
+  background-color: variables.$color-bg;
+  color: variables.$color-text;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+// Typography
+h1 {
+  font-size: 4.375rem;
+  line-height: 1;
+  letter-spacing: -0.0875rem;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: left;
+}
+
+h3 {
+  font-size: 1.75rem;
+  line-height: 1.1;
+  margin: 0;
+  color: variables.$color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: -0.56px;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.045rem;
+  text-transform: uppercase;
+  color: variables.$color-primary-light;
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: 110rem;
+  margin-inline: auto;
+  display: flex;
+}
+
+@include mixins.respond-to(desktop) {
+  // Typography
+  h1 {
+    font-size: 4.375rem;
+    line-height: 1;
+    letter-spacing: -0.0875rem;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: left;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    line-height: 1.1;
+    margin: 0;
+    color: variables.$color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: -0.56px;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.045rem;
+    text-transform: uppercase;
+    color: variables.$color-primary-light;
+  }
+
+  // Container
+  .container {
+    width: 100%;
+    max-width: 110rem;
+    margin-inline: auto;
+    display: flex;
+  }
+}
+@include mixins.respond-to(tablet) {
+  // Typography
+  h1 {
+    font-size: 4.375rem;
+    line-height: 1;
+    letter-spacing: -0.0875rem;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: left;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    line-height: 1.1;
+    margin: 0;
+    color: variables.$color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: -0.56px;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.045rem;
+    text-transform: uppercase;
+    color: variables.$color-primary-light;
+  }
+
+  // Container
+  .container {
+    width: 100%;
+    max-width: 110rem;
+    margin-inline: auto;
+    display: flex;
+  }
+}
+
+@include mixins.respond-to(mobile) {
+  // TODO: 320px
+  // Typography
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1;
+    letter-spacing: -0.0875rem;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: left;
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 1.1;
+    margin: 0;
+    color: variables.$color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: -0.56px;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.045rem;
+    text-transform: uppercase;
+    color: variables.$color-primary-light;
+  }
+  .container {
+    max-width: 304px;
+  }
+}

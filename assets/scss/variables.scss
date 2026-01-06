@@ -1,0 +1,43 @@
+// ======================
+// Base
+// ======================
+$font-base: 16px;
+
+// Colors
+$white: #ffffff;
+$black: #000000;
+
+$color-bg: #f9f9f9;
+$color-text: #1e222d;
+$color-text-muted: #50545f;
+
+$color-primary: #4463d2;
+$color-primary-light: #bac4e8;
+$color-secondary: #787c87;
+
+$color-gradient-blue: linear-gradient(134deg, #5877d7 0%, #1231a0 100%);
+$color-gradient-purple: linear-gradient(95.38deg, #9732d2 0%, #572476 100%);
+
+// Radius
+$radius-sm: 0.5rem;   // 8px
+$radius-md: 1rem;     // 16px
+$radius-lg: 2.5rem;   // 40px
+$radius-xl: 3.75rem;  // 60px
+
+// Spacing
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 1.25rem;
+$space-lg: 2.5rem;
+$space-xl: 3.75rem;
+
+// Layout
+$max-width: 1200px;
+$gutter: 1.5rem;
+
+// Breakpoints
+$breakpoints: (
+        desktop: 90rem, // 1440px
+        tablet: 48rem,  // 768px
+        mobile: 20rem   // 320px
+);
