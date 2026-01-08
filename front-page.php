@@ -7,12 +7,15 @@ get_header();
             <div class="container">
                 <div class="title-block">
                     <div class="hero-content_block left">
-                        <div class="hero-content_block--title">
-                            <h1>Автоматизация тестирования</h1>
-                        </div>
-                        <div class="hero-content_block--subtitle">
-                            <h3>корпоративных решений</h3>
-                        </div>
+                            <?php
+                                $front_id = get_option('page_on_front');
+
+                                $hero_title = function_exists('get_field') ? get_field('hero_title', $front_id) : 'No field';
+                                $hero_subtitle = function_exists('get_field') ? get_field('hero_subtitle', $front_id) : 'No field';
+
+                                echo '<div class="hero-content_block--title"> <h1>' . esc_html( $hero_title ) . '</h1> </div>';
+                                echo '<div class="hero-content_block--subtitle"> <h3>' . esc_html( $hero_subtitle ) . '</h3> </div>';
+                            ?>
                     </div>
                 </div>
                 <div class="content-block">
@@ -32,7 +35,11 @@ get_header();
                     </div>
                     <div class="hero-content_block right">
                         <div class="hero-content_block--description">
-                            <p>Тестируйте вашу корпоративную систему (ERP, CRM, ITSM, BPM, ESM), используя Low-Code возможности платформы JESM и ИИ-ассистента. Управляйте ит-рисками пользования и владения системой.</p>
+                            <?php
+                            $front_id = get_option("page_on_front");
+                            $hero_description = function_exists('get_field') ? get_field('hero_description', $front_id) : 'No field';
+                            echo '<p>' . esc_html( $hero_description) . '</p>'
+                            ?>
                         </div>
                         <div class="hero-content_block--buttons">
                             <a href="#" class="primary-button_wrapper">
@@ -444,7 +451,18 @@ get_header();
 
         <section class="callus">
         <div class="container">
-            <form action="" class="form">
+            <?php
+                $front_id = get_option('page_on_front'); 
+
+                if ( function_exists('get_field') ) {
+                    $form_shortcode = get_field('contact_form', $front_id);
+
+                    if ( $form_shortcode && function_exists('wpcf7') ) {
+                        echo do_shortcode( $form_shortcode );
+                    }
+                }
+            ?>
+            <!-- <form action="" class="form">
                 <div class="form-inputs">
                     <input type="text" name="name" placeholder="Имя *" required>
                     <input type="text" name="company" placeholder="Компания *">
@@ -468,20 +486,12 @@ get_header();
                         </label>
                     </div>
                 </div>
-<!--                <div class="form-attachments">-->
-<!--                    <div class="attachment-btn">-->
-<!--                        <button class="submit primary-button_wrapper gray">-->
-<!--                            <span class="button primary">Прикрепить файл</span>-->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                    <div class="attachment-info">Файлы до 10 МБ: doc, docx,<br> pdf, xls, xlsx, ppt, pptx, txt.</div>-->
-<!--                </div>-->
                 <div class="form-buttons">
                     <button class="submit primary-button_wrapper">
                         <span class="button primary">Отправить сообщение</span>
                     </button>
                 </div>
-            </form>
+            </form> -->
             <div class="callus-content">
                 <div class="callus-content_subtitle">
                     <div class="subtitle">/ напишите нам</div>
