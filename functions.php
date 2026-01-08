@@ -26,4 +26,7 @@ function my_theme_enqueue_styles() {
         );
     }
 }
+//connect scripts and styles
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
+//remove tag p in contact from
+add_filter('wpcf7_autop_or_not', '__return_false');
