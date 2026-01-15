@@ -5,17 +5,19 @@ get_header();
     <section class="hero">
         <div class="hero-content">
             <div class="container">
-                <div class="title-block">
+                <div class="title-block desktop">
                     <div class="hero-content_block left">
-                            <?php
-                                $front_id = get_option('page_on_front');
-
-                                $hero_title = function_exists('get_field') ? get_field('hero_title', $front_id) : 'No field';
-                                $hero_subtitle = function_exists('get_field') ? get_field('hero_subtitle', $front_id) : 'No field';
-
-                                echo '<div class="hero-content_block--title"> <h1>' . esc_html( $hero_title ) . '</h1> </div>';
-                                echo '<div class="hero-content_block--subtitle"> <h3>' . esc_html( $hero_subtitle ) . '</h3> </div>';
-                            ?>
+                        <?php
+                        $front_id = get_option('page_on_front');
+                        $hero_title = function_exists('get_field') ? get_field('hero_title', $front_id) : 'No field';
+                        $hero_subtitle = function_exists('get_field') ? get_field('hero_subtitle', $front_id) : 'No field';
+                        ?>
+                        <div class="hero-content_block--title">
+                            <h1><?= esc_html( $hero_title ) ?></h1>
+                        </div>
+                        <div class="hero-content_block--subtitle">
+                            <h3><?= esc_html( $hero_subtitle ) ?></h3>
+                        </div>
                     </div>
                 </div>
                 <div class="content-block">
@@ -31,6 +33,21 @@ get_header();
                                 </div>
                             </div>
                             <div class="title">наш продукт входит в реестр российского ПО</div>
+                        </div>
+                    </div>
+                    <div class="title-block mobile">
+                        <div class="hero-content_block left">
+                            <?php
+                            $front_id = get_option('page_on_front');
+                            $hero_title = function_exists('get_field') ? get_field('hero_title', $front_id) : 'No field';
+                            $hero_subtitle = function_exists('get_field') ? get_field('hero_subtitle', $front_id) : 'No field';
+                            ?>
+                            <div class="hero-content_block--title">
+                                <h1><?= esc_html( $hero_title ) ?></h1>
+                            </div>
+                            <div class="hero-content_block--subtitle">
+                                <h3><?= esc_html( $hero_subtitle ) ?></h3>
+                            </div>
                         </div>
                     </div>
                     <div class="hero-content_block right">
@@ -55,7 +72,7 @@ get_header();
         </div>
     </section>
 
-      <section class="products">
+    <section class="products">
         <div class="container">
             <div class="products-content">
                 <div class="products-content_elements top">
@@ -103,7 +120,7 @@ get_header();
                                 <div class="title">отчётность</div>
                                 <div class="subtitle">Performance Reporting</div>
                                 <div class="separator">
-                                    <img src="<?php echo bloginfo('template_url'); ?>/assets/images/product-report-separator.svg" alt="product-report-separator" style="height: 2px;">
+                                    <img src="<?php echo bloginfo('template_url'); ?>/assets/images/product-report-separator.svg" alt="product-report-separator">
                                 </div>
                                 <div class="description">
                                     Модуль предназначен для сбора, трансформации и визуализации данных, собранных по индикаторам из подключенных корпоративных систем заказчика.
@@ -172,13 +189,13 @@ get_header();
                                     <img src="<?php echo bloginfo('template_url'); ?>/assets/images/product-arrow-right.svg" class="arrow-right" alt="product-arrow-right">
                                 </a>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
-        <section class="advantages">
+    <section class="advantages">
         <div class="container">
             <div class="advantages-subtitle">
                 <span class="subtitle">/4 наших решений</span>
@@ -217,7 +234,7 @@ get_header();
                             <div class="advantages-item_name--title">
                                 <h3>Масштабируемость</h3>
                             </div>
-                        </div>                        
+                        </div>
                         <div class="advantages-item_description">
                             <p>Позволяет проводить тестирование в параллельном режиме, под разными учетными записями</p>
                         </div>
@@ -290,13 +307,13 @@ get_header();
                             <p>Позволяет создавать дефекты в системах управления проектами и задачами (Jira, Kaiten, Yandex.Tracker, SimpleOne.SDLC) и оповещать о проблемах через api, брокеры сообщений, Telegram</p>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </section>
 
-      <section class="crms">
+    <section class="crms">
         <div class="container">
             <div class="crms-wrapper">
                 <div class="crms-list">
@@ -333,15 +350,19 @@ get_header();
                         <h1>РАБОТАЕМ С ЛЮБЫМИ КОРПОРАТИВНЫМИ СИСТЕМАМИ</h1>
                     </span>
                 </div>
-          </div>  
+            </div>
         </div>
-    </section> 
+    </section>
 
-        <section class="easy-autotests">
+    <section class="easy-autotests">
         <div class="container">
             <div class="easy-autotests_wrapper">
                 <div class="easy-autotests_content">
-                    <div class="easy-autotests_content--subtitle">/ работай с платформой в 3 шага</div>
+                    <div class="easy-autotests_content--subtitle">
+                        <div class="subtitle">
+                            / работай с платформой в 3 шага
+                        </div>
+                    </div>
                     <div class="easy-autotests_content--title">
                         <h1>создавайте автотесты просто и быстро</h1>
                     </div>
@@ -389,7 +410,7 @@ get_header();
         </div>
     </section>
 
-        <section class="partners">
+    <section class="partners">
         <div class="container">
             <div class="partners-subtitle">
                 <div class="subtitle">
@@ -449,18 +470,18 @@ get_header();
         </div>
     </section>
 
-        <section class="callus">
+    <section class="callus">
         <div class="container">
             <?php
-                $front_id = get_option('page_on_front'); 
+            $front_id = get_option('page_on_front');
 
-                if ( function_exists('get_field') ) {
-                    $form_shortcode = get_field('contact_form', $front_id);
+            if ( function_exists('get_field') ) {
+                $form_shortcode = get_field('contact_form', $front_id);
 
-                    if ( $form_shortcode && function_exists('wpcf7') ) {
-                        echo do_shortcode( $form_shortcode );
-                    }
+                if ( $form_shortcode && function_exists('wpcf7') ) {
+                    echo do_shortcode( $form_shortcode );
                 }
+            }
             ?>
             <!-- <form action="" class="form">
                 <div class="form-inputs">

@@ -37,7 +37,8 @@ $gutter: 1.5rem;
 
 // Breakpoints
 $breakpoints: (
-        desktop: 90rem, // 1440px
-        tablet: 48rem,  // 768px
-        mobile: 20rem   // 320px
+        desktop-xl:1919px,
+        tablet: 1439px, // 1440px
+        mobile: 767px,  // 320px
+        mobile-sm: 600px   // 320px
 );
